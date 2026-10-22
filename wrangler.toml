@@ -1,0 +1,17 @@
+name = "cvht"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+
+# Giao diện tĩnh; các đường dẫn /api/* chạy qua Worker trước
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+# Trợ lý AI miễn phí (Cloudflare Workers AI) – không cần khóa
+[ai]
+binding = "AI"
+
+# Không dùng lịch chạy định kỳ (gói miễn phí chỉ có 5 lịch cho cả tài khoản)
+[triggers]
+crons = []
